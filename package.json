@@ -1,0 +1,15 @@
+{
+  "name": "cdt-mailgun",
+  "version": "0.0.0",
+  "description": "MailGun Invoices",
+  "main": "server.js",
+  "repository": "",
+  "author": "diego.balduino.vip@gmail.com",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.17.1",
+    "express": "~3.2.4",
+    "mongodb": "^2.2.26",
+    "socket.io": "~0.9.14"
+  }
+}
