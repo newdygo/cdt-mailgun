@@ -1,2 +1,0 @@
-# cdt-mailgun
-Conductor Mailgun
