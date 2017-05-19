@@ -10,8 +10,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-var amqp = require('amqplib/callback_api');
-
 app.route('/api').post(function(req, res) {
     
     //mongo.connect('mongodb://admin_conductor:jUBeKXUd2GTcvlAL@cdtmongo-shard-00-02-btirt.mongodb.net:27017/MailGun?ssl=true&replicaSet=CDTMongo-shard-0&authSource=admin', function(err, db) {
