@@ -22,9 +22,11 @@ app.route('/api/click').post(function(req, res) {
             };
 
             db.collection('events').insert(eventt);
+            db.close();
         }
-        
-        db.close();
+        else {
+            console.log(err);   
+        }
     });
 
     res.status(200);
