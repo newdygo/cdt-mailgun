@@ -7,6 +7,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.route('/api/click').post(function(req, res) {
     
+    console.log("INIT");
+    console.log(req.body);
+    console.log("END");
+    
     mongo.connect('mongodb://admin_conductor:jubekxud2gtcvlal@cdtmongo-shard-00-02-btirt.mongodb.net:27017/mailgun?ssl=true&replicaset=cdtmongo-shard-0&authsource=admin', function(err, db) {
                        
         if (!err) {
