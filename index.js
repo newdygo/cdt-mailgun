@@ -13,7 +13,7 @@ app.route('/api/click').post(function(req, res) {
             
             var account = {
                 recipient: req.body.recipient,
-                {
+                events: [{
                     $push: {
                         events: {
                             domain: req.body.domain,
@@ -37,7 +37,7 @@ app.route('/api/click').post(function(req, res) {
                             signature: req.body.signature
                         }
                     }
-                }
+                }]
             };
             
             db.collection('accounts').update({ recipient: req.body.recipient }, account, { upsert: true });
