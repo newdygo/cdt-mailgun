@@ -1,19 +1,25 @@
 {
   "name": "cdt-mailgun",
-  "version": "0.0.0",
-  "description": "MailGun Invoices",
-  "main": "server.js",
+  "version": "0.0.1",
+  "description": "MailGun Webhook",
+  "engines": {
+    "node": "6.10.3"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "4.15.3"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com:newdygo/cdt-mailgun.git"
+    "url": "https://github.com/newdygo/cdt-mailgun"
   },
-  "author": "diego.balduino.vip@gmail.com",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/newdygo/cdt-mailgun/issues"
-  },
-  "homepage": "https://github.com/newdygo/cdt-mailgun#readme",
-  "dependencies": {
-    "express": "~3.2.4"
-  }
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }
