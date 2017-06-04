@@ -11,27 +11,27 @@ app.route('/api/click').post(function(req, res) {
     console.log(req.body);
     console.log("END");
     
-    mongo.connect('mongodb://admin_conductor:jubekxud2gtcvlal@cdtmongo-shard-00-02-btirt.mongodb.net:27017/mailgun?ssl=true&replicaset=cdtmongo-shard-0&authsource=admin', function(err, db) {
-                       
-        if (!err) {
-
-            var eventt = {
-                city: req.body.city,
-                domain: req.body.domain,
-                recipient: req.body.recipient,
-                event: req.body.event,
-                timestamp: req.body.timestamp,
-                token: req.body.token,
-                signature: req.body.signature
-            };
-
-            db.collection('events').insert(eventt);
-            db.close();
-        }
-        else {
-            console.log(err);   
-        }
-    });
+    //mongo.connect('mongodb://admin_conductor:jubekxud2gtcvlal@cdtmongo-shard-00-02-btirt.mongodb.net:27017/mailgun?ssl=true&replicaset=cdtmongo-shard-0&authsource=admin', function(err, db) {
+    //                   
+    //    if (!err) {
+    //
+    //        var eventt = {
+    //            city: req.body.city,
+    //            domain: req.body.domain,
+    //            recipient: req.body.recipient,
+    //            event: req.body.event,
+    //            timestamp: req.body.timestamp,
+    //            token: req.body.token,
+    //            signature: req.body.signature
+    //        };
+    //
+    //        db.collection('events').insert(eventt);
+    //        db.close();
+    //    }
+    //    else {
+    //        console.log(err);   
+    //    }
+    //});
 
     res.status(200);
     res.send({message: "OK"});   
