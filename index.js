@@ -3,7 +3,8 @@ var app = express();
 
 app.route('/api').post(function(req, res) {
     
-    //console.log('Starting...');
+    console.log('Starting...');
+    console.log(req);
 
     res.status(200);
     res.send({message: "OK"});   
