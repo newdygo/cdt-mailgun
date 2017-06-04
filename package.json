@@ -3,13 +3,17 @@
   "version": "0.0.0",
   "description": "MailGun Invoices",
   "main": "server.js",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:newdygo/cdt-mailgun.git"
+  },
   "author": "diego.balduino.vip@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/newdygo/cdt-mailgun/issues"
+  },
+  "homepage": "https://github.com/newdygo/cdt-mailgun#readme",
   "dependencies": {
-    "async": "~0.2.8",
-    "body-parser": "^1.17.1",
-    "express": "~3.2.4",
-    "mongodb": "^2.2.26",
-    "socket.io": "~0.9.14"
+    "express": "~3.2.4"
   }
 }
