@@ -39,7 +39,7 @@ app.route('/api/click').post(function(req, res) {
                     }
                 }]
             };
-            
+            db.collection('accounts').remove({});
             db.collection('accounts').update({ recipient: req.body.recipient }, account, { upsert: true });
             db.close();
         }
