@@ -2,6 +2,7 @@ var app = require('express')();
 var bodyParser = require('body-parser')
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.route('/api').post(function(req, res) {
     
