@@ -4,7 +4,7 @@ var app = express();
 app.route('/api').post(function(req, res) {
     
     console.log('Starting...');
-    console.log(req);
+    console.log(req.body);
 
     res.status(200);
     res.send({message: "OK"});   
