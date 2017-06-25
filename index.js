@@ -6,13 +6,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.route('/api/click').post(function(req, res) {
+        
+    var us = process.env.MONGODB_USER;
+    var pw = process.env.MONGODB_PASSWORD;
+    var s0 = process.env.MONGODB_SHARD_00;
+    var s1 = process.env.MONGODB_SHARD_01;
+    var s2 = process.env.MONGODB_SHARD_02;
+    var db = process.env.MONGODB_DATABASE;
     
-    var env = process.env;
-    
-    console.log(process.env.MONGODB_USER);
-    console.log(env.MONGODB_USER);
-    
-    mongo.connect('mongodb://env.MONGODB_USER:env.MONGODB_PASSWORD@env.MONGODB_SHARD_00,env.MONGODB_SHARD_01,env.MONGODB_SHARD_02/env.MONGODB_DATABASE?ssl=true&replicaSet=CDTMongo-shard-0&authSource=admin', function(err, db) {
+    mongo.connect(`mongodb://${us}:${pw}@${s0},${s1},${s2}/${db}?ssl=true&replicaSet=CDTMongo-shard-0&authSource=admin`, function(err, db) {
                        
         if (!err) {
             
