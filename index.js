@@ -7,6 +7,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.route('/api/click').post(function(req, res) {
     
+    var env = process.env;
+    
     mongo.connect('mongodb://env.MONGODB_USER:env.MONGODB_PASSWORD@env.MONGODB_SHARD_00,env.MONGODB_SHARD_01,env.MONGODB_SHARD_02/env.MONGODB_DATABASE?ssl=true&replicaSet=CDTMongo-shard-0&authSource=admin', function(err, db) {
                        
         if (!err) {
