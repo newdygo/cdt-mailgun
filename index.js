@@ -18,8 +18,8 @@ app.route('/api/click').post(function(req, res) {
                        
         if (!err) {
             
-            var account = db.collection.findOne({ recipient: req.body.recipient });
-            
+            var account = db.accounts.findOne({ recipient: req.body.recipient });
+            console.log(account);
             if (account === null)
             {
                 account = {
