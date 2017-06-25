@@ -46,9 +46,11 @@ app.route('/api/click').post(function(req, res) {
                         signature: req.body.signature
                     }
                 };
+		    
+		db.collection('accounts').insert(account);
             }
 		
-            db.collection('accounts').update({ recipient: req.body.recipient }, account, { upsert: true });
+            
             db.close();
         }
     });
