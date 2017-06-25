@@ -46,8 +46,37 @@ app.route('/api/click').post(function(req, res) {
                         signature: req.body.signature
                     }
                 };
-            }
-            
+            } else {
+	        account = {
+                        recipient: req.body.recipient,
+                        {
+						$push: {
+							'events': {
+								domain: req.body.domain,
+								event: req.body.event,
+								
+								ip: req.body.ip,
+								device_type: req.body["device-type"],
+								client_type: req.body["client-type"],
+								client_name: req.body["client-name"],
+								user_agent: req.body["user-agent"],
+								client_os: req.body["client-os"],
+								
+								country: req.body.country,
+								city: req.body.city,
+								region: req.body.region,
+								
+								message_id: req.body["message-id"],                
+								tag: req.body.tag,
+								timestamp: req.body.timestamp,
+								token: req.body.token,
+								signature: req.body.signature
+							}
+						}
+					}
+				}
+			}
+		
             db.collection('accounts').update({ recipient: req.body.recipient }, account, { upsert: true });
             db.close();
         }
